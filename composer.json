@@ -14,6 +14,13 @@
       "url": "https://github.com/pantheon-systems/wordpress-composer"
     },
     {
+    	"type": "composer",
+    	"url": "https://repo.packagist.com/atlanticmediastrategies/"
+    },
+    {
+      "packagist.org": false
+    },    
+    {
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -38,6 +45,8 @@
     "wpackagist-theme/twentyseventeen": "^1.1",
     "pantheon-systems/wordpress-composer": "^4.8.2",
     "roots/wp-password-bcrypt": "^1.0.0",
+    "ams/ams-beastman": "dev-master",
+    "ams/ams-skeletor-theme": "dev-master",    
     "rvtraveller/qs-composer-installer": "^1.1",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "kraken-io/kraken-php": "^1.6",
