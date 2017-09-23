@@ -1,48 +1,4 @@
-```
-    .+?:
-     .+??.
-       ??? .
-       +???.
-  +?????????=.
-  .???????????.
-  .????????????.
-
- ########### ########
- ############.#######.
- ####### ####  .......
- ######## #### #######
- #########.####.######
- ######  ...
- #######.??.##########
- #######~+??.#########
- ########.??..
- #########.??.#######.
- #########.+?? ######.
-           .+?.
-     .????????????.
-       +??????????,
-        .????++++++.
-          ????.
-          .???,
-           .~??.
-             .??
-              .?,.
-```
----
-# Advanced WordPress on Pantheon
-
-## Purpose
-This repository is an extension of [pantheon-systems/example-wordpress-composer](https://github.com/pantheon-systems/example-wordpress-composer/) 
-showning an example of an advanced WordPress 
-deployment workflow on Pantheon integrating tools such as:
-* Asset compilation with gulp
-* Dependency management with Composer
-* Build process on Circle CI 2.0
-* Unit and Behat testing
-* Enforcing WordPress coding standards
-
-## Deprecated Branch
-The old version of this example used Circle CI 1.0 and did a lot of steps that the [Terminus build tools plugin](https://github.com/pantheon-systems/terminus-build-tools-plugin/) now does manually. This has been deprecated in favor of an example based on Circle CI 2.0 and [Example WordPress Composer](https://github.com/pantheon-systems/example-wordpress-composer/). The [circle-ci-1](https://github.com/ataylorme/Advanced-WordPress-on-Pantheon/tree/circle-ci-1) branch has this version archived for reference only.
+Forked from [Advanced-WordPress-on-Pantheon](https://github.com/ataylorme/Advanced-WordPress-on-Pantheon) - refer there for more docs. Stripping this down to just setup / config.
 
 ## Circle CI Setup
 You will need to add the following environment variables in the Circle CI UI. See [https://circleci.com/docs/2.0/environment-variables](https://circleci.com/docs/2.0/environment-variables/)/ for details.
@@ -54,6 +10,18 @@ You will need to add the following environment variables in the Circle CI UI. Se
 * TEST_SITE_NAME: The name of the test site to provide when installing.
 * ADMIN_PASSWORD: The admin password to use when installing.
 * ADMIN_EMAIL:    The email address to give the admin when installing.
+
+You'll also need to set up an SSH key for deployment to Pantheon. 
+
+#### Add Private SSH key to Circle CI
+* Copy your current private key `$pbcopy < ~/.ssh/id_rsa`
+* Add to CircleCI at Project > Permissions > SSH Permissions. You can leave `hostname` blank to use for all builds.
+
+#### Add Public SSH key to Pantheon
+* Copy your current public key `$pbcopy < ~/.ssh/id_rsa.pub`
+* Add to Pantheon under Account > SSH Keys
+
+Once this is in place, the `build_and_deploy` step should pass on Circle. 
 
 ## Local Setup
 In order to develop the site locally a few steps need to be completed. 
